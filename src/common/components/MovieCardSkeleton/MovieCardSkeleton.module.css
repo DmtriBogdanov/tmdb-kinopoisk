@@ -1,0 +1,30 @@
+.card {
+  min-width: 0;
+}
+
+.poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.posterSkeleton {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.posterSkeleton :global(.react-loading-skeleton) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}

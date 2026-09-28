@@ -1,0 +1,136 @@
+.category {
+  padding: 100px 0;
+}
+
+.category__title {
+  margin-bottom: 32px;
+  font-size: 40px;
+}
+
+.category__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.category__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category__tab {
+  flex-shrink: 0;
+  color: var(--text-color);
+  padding: 12px 22px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.category__tab:hover {
+  border-color: var(--color-accent);
+}
+
+.category__tab_active {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.category__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.category__header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.loading {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.category__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .category__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .category__tabs {
+    justify-content: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .category__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .category__header h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .category__tabs {
+    gap: 8px;
+    margin-bottom: 28px;
+    padding-bottom: 4px;
+  }
+
+  .category__tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .category__header {
+    margin-bottom: 20px;
+  }
+
+  .category__header h2 {
+    font-size: 22px;
+  }
+
+  .loading {
+    font-size: 12px;
+  }
+
+  .category__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .category__grid {
+    gap: 12px;
+  }
+
+  .category__header h2 {
+    font-size: 20px;
+  }
+
+  .category__tab {
+    padding: 9px 14px;
+  }
+}
+

@@ -1,0 +1,32 @@
+.footer {
+  min-height: 80px;
+  background-color: var(--header-background);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.footer__copyright {
+  text-align: center;
+}
+
+.footer__tmdb {
+  margin-left: 4px;
+}
+
+.footer__link {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .footer__tmdb {
+    display: block;
+    margin-left: 0;
+  }
+}
+

@@ -1,0 +1,305 @@
+.page {
+  padding: 40px 0 80px;
+}
+
+.container {
+  width: min(
+    1400px,
+    calc(100% - 40px)
+  );
+
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 32px;
+
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.content {
+  display: grid;
+
+  grid-template-columns:
+    280px
+    minmax(0, 1fr);
+
+  gap: 32px;
+
+  align-items: start;
+}
+
+.desktopFilters {
+  display: block;
+}
+
+.results {
+  position: relative;
+
+  min-width: 0;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 28px 16px;
+}
+
+.filtersButton {
+  display: none;
+}
+
+.mobileFilters {
+  display: none;
+}
+
+.empty {
+  min-height: 400px;
+
+  display: grid;
+  place-content: center;
+
+  text-align: center;
+}
+
+.empty h2 {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+}
+
+.empty p {
+  margin: 0;
+
+  color: #777;
+}
+
+.error {
+  min-height: 400px;
+
+  display: grid;
+  place-content: center;
+
+  text-align: center;
+}
+
+.error h1 {
+  margin: 0 0 8px;
+}
+
+.error p {
+  margin: 0;
+
+  color: #777;
+}
+
+.filtersSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+  max-width: 280px;
+}
+
+.genresSkeleton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns:
+      240px
+      minmax(0, 1fr);
+
+    gap: 20px;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .content {
+    display: block;
+  }
+
+  .desktopFilters {
+    display: none;
+  }
+
+  .filtersButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 46px;
+
+    margin-bottom: 24px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+
+    background: var(--background-color);
+    color: inherit;
+
+    font: inherit;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .filtersButton:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .mobileFilters {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100dvh;
+
+    background: var(--background-color);
+  }
+
+  .mobileFiltersHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    min-height: 64px;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  .mobileFiltersHeader h2 {
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: inherit;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  .mobileFiltersContent {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 20px;
+  }
+
+  .mobileFiltersFooter {
+    flex-shrink: 0;
+
+    padding: 16px 20px;
+
+    border-top: 1px solid var(--text-color);
+
+    background: var(--background-color);
+  }
+
+  .applyButton {
+    width: 100%;
+    min-height: 46px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--color-accent);
+    border-radius: 10px;
+
+    background: var(--color-accent);
+    color: #fff;
+
+    font: inherit;
+    font-weight: 500;
+
+    cursor: pointer;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: min(
+      100% - 24px,
+      1400px
+    );
+  }
+
+  .page {
+    padding-top: 24px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px 12px;
+  }
+}
